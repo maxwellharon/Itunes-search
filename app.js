@@ -1,7 +1,7 @@
 Vue.filter('formatDate', function(d) {
 	if(!window.Intl) return d;
 	return new Intl.DateTimeFormat('en-US').format(new Date(d));
-}); 
+});
 
 const app = new Vue({
 	el:'#app',
@@ -19,7 +19,7 @@ const app = new Vue({
 				this.audio.currentTime = 0;
 			}
 			this.searching = true;
-			fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(this.term)}&limit=10&media=music`)
+			fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(this.term)}&limit=100&media=music`)
 			.then(res => res.json())
 			.then(res => {
 				this.searching = false;
