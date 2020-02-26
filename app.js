@@ -19,7 +19,7 @@ const app = new Vue({
 				this.audio.currentTime = 0;
 			}
 			this.searching = true;
-			fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(this.term)}&limit=100&media=music`)
+			fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(this.term)}&limit=10000&media=music`)
 			.then(res => res.json())
 			.then(res => {
 				this.searching = false;
